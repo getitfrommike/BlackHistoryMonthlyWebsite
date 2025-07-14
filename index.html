@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black History MonthLY</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Black History MonthLY</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+    <li><a href="/pages/figures.html">Figures</a></li>
+    <li><a href="/pages/timeline.html">Timeline</a></li>
+    <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/pages/faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="slideshow">
+    <div class="slide active" style="background-image: url('images/slide1.jpg');">
+      <div class="slide-caption"><h2>Michael Wall</h2><p>Founder and CEO of Thug Coding®.</p></div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide2.jpg');">
+      <div class="slide-caption"><h2>Reggie Middleton</h2><p>Disruptor-in-Chief, Founded DeFi c. 2013, <p></p>Patented foundations of digital finance <p>US11196566, US11895246, US12231579, JP6813477, <p></p>JP7204231, JP7533974, JP7533983</p></div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide3.jpg');">
+      <div class="slide-caption"><h2>Horace Butler</h2><p>Author of When Rocks Cry Out.</p></div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide4.jpg');">
+      <div class="slide-caption"><h2>Skipp Townsend</h2><p>The co-founder and executive director of 2nd Call, <p>a gang intervention non-profit.</p></div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide5.jpg');">
+      <div class="slide-caption"><h2>Reggie Middleton</h2><p></p></div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide6.jpg');">
+      <div class="slide-caption"><h2>Horace Butler</h2><p>America’s Father of History.</p></div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide7.jpg');">
+      <div class="slide-caption"><h2>Michael Wall</h2><p>Software Engineer, Author, Revenue Leader and Founder of Black History MonthLY.</p></div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide8.jpg');">
+      <div class="slide-caption"><h2>Skipp Townsend</h2><p>American gang expert. Community Leader.</p></div>
+
+
+      
+    </div>
+  </div>
+
+
+
+  <section id="home" class="hero">
+    <h2>Celebrating Black Excellence. What IS Black?</h2>
+    <p>Explore the lives and histories of Black leaders, artists, scientists, rulers and change-makers from America.</p>
+    <p>But first, we MUST define and understand what IS Black people. Most people don't know what BLACK is.</p>
+    <a href="#faq" class="faq-button">Read the FAQ</a>
+  </section>
+
+  <section class="parallax">
+    <div class="parallax-caption fade-in-on-scroll">
+      <h2>We Go Deeper Than February</h2>
+      <p>Black history is not just a month. It's the past, present, and future.</p>
+    </div>
+  </section>
+
+  <section id="about" class="section about-section">
+    <div class="about-content">
+      <h2>About Black History MonthLY</h2>
+      <p>
+        Black History Monthly is more than a website—it's a FOUNDATION to preserve, explore, promote and amplify Black narratives of America from ancient empires to modern innovations.
+      </p>
+      <p>
+        We uncover the truth that has been hidden for over 500 years and show facts and evidence to set the record of the ancient Black history of America correct.
+      </p>
+      <p>
+        Spotlight legends, and create the new world through the greatness of Black men and women.challenge the timeline we're taught. From Africa to the Americas and beyond, this is Black history—unfiltered and alive.
+      </p>
+    </div>
+  </section>
+
+  <section id="figures" class="section">
+    <h2>Featured Figures</h2>
+    <div class="card-container" id="figures-container"></div>
+  </section>
+
+  <section id="timeline" class="section">
+    <h2>Timeline of Key Events</h2>
+    <div class="timeline-wrapper">
+      <div class="timeline" id="timeline-old">
+        <div class="timeline-item left"><div class="content"><h3>1865</h3><p>Abolition of slavery in the U.S.</p></div></div>
+        <div class="timeline-item right"><div class="content"><h3>1964</h3><p>Civil Rights Act signed into law.</p></div></div>
+        <div class="timeline-item left"><div class="content"><h3>1994</h3><p>Nelson Mandela becomes President of South Africa.</p></div></div>
+      </div>
+      <div class="x-overlay" id="x-overlay">❌</div>
+      <div class="timeline hidden" id="timeline-new">
+        <div class="timeline-item left"><div class="content"><h3>1235</h3><p>The Mali Empire rises in West Africa.</p></div></div>
+        <div class="timeline-item right"><div class="content"><h3>1324</h3><p>Mansa Musa’s pilgrimage showcases African wealth to the world.</p></div></div>
+        <div class="timeline-item left"><div class="content"><h3>1491</h3><p>Great Zimbabwe thrives as a center of trade and culture.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact & Contributions</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message or Suggestion" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+  <p>
+    &copy; 2025 Black History Monthly. All rights reserved.
+    Website designed by <a href="https://www.ThugCoding.com" target="_blank" rel="noopener noreferrer">Thug Coding®</a>
+  </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
