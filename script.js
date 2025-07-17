@@ -9,20 +9,49 @@ setInterval(() => {
 
 // Featured figures section
 const figures = [
-  { name: "Horace Butler", desc: "Author of When Rocks Cry Out.", img: "images/horace.jpg" },
-  { name: "Reggie Middleton", desc: "Father of Decentralized Finance.", img: "images/reggie.jpg" },
-  { name: "Skipp Townsend", desc: "Community organizer and peace advocate.", img: "images/skipp.jpg" },
-  { name: "Michael Wall", desc: "Founder of Black History Monthly.", img: "images/michael.jpg" }
+  {
+    name: "Horace Butler",
+    desc: "Author of When Rocks Cry Out.",
+    img: "images/horace.jpg",
+    link: "pages/horace.html"
+  },
+  {
+    name: "Reggie Middleton",
+    desc: "Father of Decentralized Finance.",
+    img: "images/reggie.jpg",
+    link: "pages/reggie.html"
+  },
+  {
+    name: "Skipp Townsend",
+    desc: "Community organizer and peace advocate.",
+    img: "images/skipp.jpg",
+    link: "pages/skipp.html"
+  },
+  {
+    name: "Michael Wall",
+    desc: "Founder of Black History Monthly.",
+    img: "images/michael.jpg",
+    link: "pages/michael.html"
+  }
 ];
+
 const container = document.getElementById("figures-container");
 if (container) {
   figures.forEach(fig => {
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `<img src="${fig.img}" alt="${fig.name}"><h3>${fig.name}</h3><p>${fig.desc}</p>`;
+    card.innerHTML = `
+      <a href="${fig.link}">
+        <img src="${fig.img}" alt="${fig.name}" />
+        <h3>${fig.name}</h3>
+        <p>${fig.desc}</p>
+      </a>
+    `;
     container.appendChild(card);
   });
 }
+
+
 
 // Contact form
 const contactForm = document.getElementById("contact-form");

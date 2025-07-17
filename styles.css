@@ -4,6 +4,8 @@
       background: #111;
       color: #fff;
       scroll-behavior: smooth;
+      font-size: 21px;
+
     }
     header {
       background: #222;
@@ -346,7 +348,7 @@
 .about-section p {
   max-width: 800px;
   margin: auto;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.6;
 }
 
@@ -361,4 +363,79 @@ footer a.footer-link:visited {
 footer a.footer-link:hover {
   color: #f39c12 !important;
   text-decoration: none;
+}
+
+pre code {
+  display: block;
+  background: #1e1e1e;
+  color: #f1f1f1;
+  padding: 1rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* HORACE BUTLER PAGE STYLES */
+
+body.horace-butler {
+  background-color: #111;
+  color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.8;
+  padding: 0;
+  margin: 0;
+}
+
+main.section {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+h2, h3 {
+  color: #ffa500;
+  margin-top: 2rem;
+}
+
+a {
+  color: #4fc3f7;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #ffcc00;
+}
+
+pre code {
+  background-color: #222;
+  color: #eee;
+  padding: 1rem;
+  display: block;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-family: monospace;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.figure-photo {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card a:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
