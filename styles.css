@@ -439,3 +439,100 @@ pre code {
   transform: scale(1.02);
   transition: transform 0.3s ease;
 }
+
+/* BLACK HISTORY MONTHLY BANNER HOME NAV */
+
+.home-link {
+  text-decoration: none;   /* removes underline */
+  color: inherit;          /* keeps same color as <h1> */
+} 
+
+
+/* ABOUT BLACK HISTORY MONTHLY PARALLAX SECTION */
+
+.about-section h2 {
+  color: #000;  /* black */
+}
+
+body.dark .about-section h2 {
+  color: #fff;  /* white, if you want to toggle a dark mode */
+}
+
+/* ========== Monthly Feature ========== */
+.monthly-feature {
+  background: #111;
+  padding: 2.5rem 2rem;
+}
+
+.monthly-feature__wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.monthly-feature__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.monthly-feature__kicker {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #f39c12; /* gold accent to match site */
+  margin-bottom: 0.25rem;
+}
+
+.monthly-feature h2 {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: #fff; /* force white for the headline here */
+}
+
+.monthly-feature__info p {
+  color: #ddd;
+}
+
+.monthly-feature__actions {
+  margin-top: 1rem;
+}
+
+.monthly-feature .button,
+.monthly-feature .button:visited {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  background: #f39c12;
+  color: #111;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.monthly-feature .button:hover {
+  background: #e67e22;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .monthly-feature__wrap {
+    grid-template-columns: 1fr;
+  }
+  .monthly-feature__image {
+    order: -1;
+  }
+}
+
+.monthly-feature {
+  text-align: center;
+}
+.monthly-feature__info {
+  text-align: left; /* optional: keep text aligned left inside its column */
+}
