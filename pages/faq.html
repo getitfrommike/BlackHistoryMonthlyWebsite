@@ -4,56 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Black History MonthLY - FAQ</title>
-  <link rel="stylesheet" href="/BlackHistoryMonthlyWebsite/styles.css" />
+  <!-- Use relative paths from /pages/faq.html -->
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
 
   <header>
-    <h1>Black History MonthLY</h1>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav>
+    <h1>
+      <a href="../index.html" class="home-link">Black History MonthLY</a>
+    </h1>
+    <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu" role="button">☰</div>
+    <nav aria-label="Main">
       <ul id="nav-links">
-<a href="/BlackHistoryMonthlyWebsite/index.html">Home</a>
-<a href="/BlackHistoryMonthlyWebsite/pages/about.html">About</a>
-<a href="/BlackHistoryMonthlyWebsite/pages/figures.html">Figures</a>
-<a href="/BlackHistoryMonthlyWebsite/pages/timeline.html">Timeline</a>
-<a href="/BlackHistoryMonthlyWebsite/pages/contact.html">Contact</a>
-<a href="/BlackHistoryMonthlyWebsite/pages/faq.html">FAQ</a>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about.html">About</a></li>
+        <li><a href="../pages/figures.html">Figures</a></li>
+        <li><a href="../pages/timeline.html">Timeline</a></li>
+        <li><a href="../pages/contact.html">Contact</a></li>
+        <li><a href="../pages/faq.html" aria-current="page">FAQ</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="slideshow">
-    <div class="slide active" style="background-image: url('/images/slide1.jpg');">
-      <div class="slide-caption"><h2>Michael Wall</h2><p>Founder and CEO of Thug Coding®.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide2.jpg');">
-      <div class="slide-caption"><h2>Reggie Middleton</h2><p>Disruptor-in-Chief, Founder of DeFi.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide3.jpg');">
-      <div class="slide-caption"><h2>Horace Butler</h2><p>Author of When Rocks Cry Out.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide4.jpg');">
-      <div class="slide-caption"><h2>Skipp Townsend</h2><p>Community organizer and gang intervention leader.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide5.jpg');">
-      <div class="slide-caption"><h2>Reggie Middleton</h2><p></p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide6.jpg');">
-      <div class="slide-caption"><h2>Horace Butler</h2><p>America’s Father of History.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide7.jpg');">
-      <div class="slide-caption"><h2>Michael Wall</h2><p>Engineer, Author, and Founder of Black History MonthLY.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide8.jpg');">
-      <div class="slide-caption"><h2>Skipp Townsend</h2><p>Gang expert and peace advocate.</p></div>
-    </div>
-  </div>
 
-  <!-- ✳️ PAGE-SPECIFIC CONTENT GOES HERE -->
+  <!-- FAQ -->
   <section class="section">
     <h2>FAQ</h2>
-    <p>This is a template for your internal pages. Replace this section with your page-specific content such as About, FAQ, Timeline details, etc.</p>
+
+    <div class="faq">
+      <details>
+        <summary>What is Black History MonthLY?</summary>
+        <div class="faq-a">
+          Black History MonthLY is an ongoing archive and learning hub celebrating Black memory, enterprise, and community uplift — every month of the year.
+        </div>
+      </details>
+
+      <details>
+        <summary>Are you a 508(c)(1)(A) organization?</summary>
+        <div class="faq-a">
+          Yes. We operate as a 508(c)(1)(A) faith-and-education ministry. Donations support teaching, research, and community programs.
+        </div>
+      </details>
+
+      <details>
+        <summary>How can I contribute or get involved?</summary>
+        <div class="faq-a">
+          You can volunteer, submit research or figures, partner with a program, or donate. Visit the <a href="../pages/contact.html">Contact</a> page.
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I suggest a figure for the archive?</summary>
+        <div class="faq-a">
+          Absolutely — send sources and a short write-up via the contact form. We prioritize verifiable, primary-source-based entries.
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I use your materials in my class or church?</summary>
+        <div class="faq-a">
+          Most content is available for non-commercial educational use with attribution. For anything else, please reach out on the contact page.
+        </div>
+      </details>
+    </div>
   </section>
 
   <footer>
@@ -64,6 +77,7 @@
     </p>
   </footer>
 
-  <script src="/script.js"></script>
+  <!-- Use relative script path from /pages/faq.html -->
+  <script src="../script.js"></script>
 </body>
 </html>
