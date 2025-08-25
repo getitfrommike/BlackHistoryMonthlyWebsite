@@ -2,63 +2,231 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Black History MonthLY - About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Black History Montly</title>
   <link rel="stylesheet" href="../styles.css" />
+  <!-- Layout patch: fix narrow cards/columns and container width -->
+  <style>
+    /* safety reset */
+    html, body { width: 100%; }
+    body { margin: 0; }
+    * { box-sizing: border-box; }
+
+    :root { --maxw: 1120px; --gap: 1.25rem; }
+
+    /* container spans full width up to max */
+    .container { max-width: var(--maxw); margin-inline: auto; padding-inline: 1rem; width: 100%; }
+
+    /* consistent section spacing */
+    .section { padding: clamp(16px, 3vw, 32px) 0; }
+
+    /* robust grid that won't collapse into skinny strips */
+    .grid { display: grid; gap: var(--gap); width: 100%; }
+    .grid.two { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+    /* card should expand to fill the grid cell */
+    .card { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; padding: 1rem; background: var(--card, #111319); border: 1px solid var(--soft, #1c2130); border-radius: 12px; box-shadow: 0 1px 0 rgba(0,0,0,.35); }
+    .card h4 { margin: 0 0 0.25rem 0; }
+
+    /* helper blocks */
+    .lead { max-width: 75ch; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .btn { display: inline-block; padding: 0.6rem 0.9rem; border: 1px solid currentColor; border-radius: 999px; text-decoration: none; }
+
+    /* nav list defaults (avoid indent causing left strip) */
+    header nav ul { list-style: none; margin: 0; padding: 0; }
+
+    /* small screens: single column */
+    @media (max-width: 640px) {
+      .container { padding-inline: 12px; }
+      .grid.two { grid-template-columns: 1fr; }
+    }
+    /* remove gradient banner */
+    .hero, #about-hero { background: transparent !important; background-image: none !important; }
+    .hero::before, .hero::after { content: none !important; display: none !important; }
+    .gradient-banner, .banner, .top-gradient, .gradient { background: none !important; background-image: none !important; }
+    header { background-image: none !important; }
+    /* Centering overrides */
+    
+    header h1 { margin: 0; }
+    
+
+    #about-hero, .section, .cta { text-align: center; }
+    .quick-links { justify-content: center; }
+
+    /* Ensure cards sit centered within the grid */
+    .grid { justify-content: center; }
+    .card { margin-inline: auto; }
+
+    .site-footer, footer { text-align: center; }
+  </style>
+  <meta name="description" content="About Black History Montly — a faith-and-education ministry focused on memory, scholarship, and community enterprise." />
 </head>
 <body>
-
+  <!-- Global Header -->
   <header>
-<h1>
-  <a href="../index.html" class="home-link">Black History MonthLY</a>
-</h1>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav>
-      <ul id="nav-links">
-<a href="../index.html">Home</a>
-<a href="../pages/about.html">About</a>
-<a href="../pages/figures.html">Figures</a>
-<a href="../pages/timeline.html">Timeline</a>
-<a href="../pages/contact.html">Contact</a>
-<a href="../pages/faq.html">FAQ</a>
+    <h1><a href="../index.html" class="home-link">Black History MonthLY</a></h1>
+    <div class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">☰</div>
+    <nav aria-label="Primary">
+      <ul id="nav-links" class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./about.html" class="active" aria-current="page">About</a></li>
+        <li><a href="./figures.html">Figures</a></li>
+        <li><a href="./timeline.html">Timeline</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./faq.html">FAQ</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="slideshow">
-    <div class="slide active" style="background-image: url('/images/slide1.jpg');">
-      <div class="slide-caption"><h2>Michael Wall</h2><p>Founder and CEO of Thug Coding®.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide2.jpg');">
-      <div class="slide-caption"><h2>Reggie Middleton</h2><p>Disruptor-in-Chief, Founder of DeFi.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide3.jpg');">
-      <div class="slide-caption"><h2>Horace Butler</h2><p>Author of When Rocks Cry Out.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide4.jpg');">
-      <div class="slide-caption"><h2>Skipp Townsend</h2><p>Community organizer and gang intervention leader.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide5.jpg');">
-      <div class="slide-caption"><h2>Reggie Middleton</h2><p></p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide6.jpg');">
-      <div class="slide-caption"><h2>Horace Butler</h2><p>America’s Father of History.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide7.jpg');">
-      <div class="slide-caption"><h2>Michael Wall</h2><p>Engineer, Author, and Founder of Black History MonthLY.</p></div>
-    </div>
-    <div class="slide" style="background-image: url('/images/slide8.jpg');">
-      <div class="slide-caption"><h2>Skipp Townsend</h2><p>Gang expert and peace advocate.</p></div>
-    </div>
-  </div>
+  <main id="main" class="container">
+    <!-- Hero / Intro -->
+    <section id="about-hero" class="section hero">
+      <h2>About Black History Montly</h2>
+      <p class="lead">Black History MonthLY launched in 2016. Black History MonthLY launched in 2016. Black History MonthLY launched in 2016. Black History MonthLY launched in 2016..</p>
+      <div class="quick-links">
+        <a href="#mission" class="btn">Mission</a>
+        <a href="#what-we-do" class="btn">What We Do</a>
+        <a href="#values" class="btn">Values</a>
+        <a href="#governance" class="btn">Governance</a>
+        <a href="#get-involved" class="btn">Get Involved</a>
+      </div>
+    </section>
 
-  <!-- ✳️ PAGE-SPECIFIC CONTENT GOES HERE -->
-  <section class="section">
-    <h2>About</h2>
-    <p>This is a template for your internal pages. Replace this section with your page-specific content such as About, FAQ, Timeline details, etc.</p>
-  </section>
+    <!-- Who we are -->
+    <section id="who-we-are" class="section">
+      <h3>Who We Are</h3>
+      <p><strong>Black History Montly...</strong> First and foremost, we are <strong>BLACK</strong> people..</p>
+      <p>The term/word, Black, MUST now be defined, as it has avoided an accurate and proper definition due to lack of correct representation. Not saying that Black people have not given a definition to Black before. I am saying for the past 500 years, the TRUE identity and history of Black people has been so hidden, distorted, obscured, misunderstood and confounded that the appropriate definition must be assigned. Based on a collection of recent, groundbreaking discoveries.<p>The absence of color or complete absorption of light. So, Black is not a color...in Physics. But, Black is a color in art and design. These are some of the things that have been associated with Black. It appears that there is some type of SECRET to Black. <p> BUT...we are NOT talking about the ideas of the depth of the light spectrum or an artists' color wheel. We are talking about BLACK...as in Black people. The definition of Black is going to need to be studied. The appearance of Black may not be on the color spectrum up to certain nanometers. However, there is measure beyond the visible color spectrum that is just as, or more  important, but never talked about when discussing Black...or, Black people. <p>The importance of Black in our defintion is the relationship that Black has with the sun. Outside of a visible color/light, the sun has a Black light that is called ULTRAVIOLET. This is a part of the light that powers human beings. Black human beings. <p></p>UV light is the Black light that acts with the Earth. The Sun emits radiation: gamma rays, X-rays, UV, IR, and radio. These are all BLACK lights outside of the visible light spectrum. <p> <br>We live in a SOLAR SYSTEM.</p><p>Black skin color is the best skin color for human beings in a solar system. We realize that UV (ultraviolet) sun rays interact with the natural composition of Black skin with a natural affinity, and believe that more research and study must be dedicated to further the understanding on a biochemical and scientific level.</p></section>
 
-  <footer>
+          <!-- Who we are -->
+    <section id="who-we-are" class="section">
+      <h3>Who We Are (CON'T)</h3>
+      <p><strong>Black People NAMED these TWO LANDS, America, over 22,000 years ago</strong> Black people have <strong>ALWAYS</strong> been in the Americas.</p>
+      <p>America is a Black BLOODLINE and a Black BIRTHRIGHT. So called white people are NOT Americans. <p>There is a lot of work that needs to be done for restoring and re-establishing the correct understanding and status of Black people in the United States of America and the world. There are many Black people who believe that Africa has a monopoly on who is a Black person and who is not. Africa is NOT the authority on who and/or what Black people are. For that matter, the so-called white people of Europe and the U.S. are not the autority on who/what Black people are.  <p> The error was created intentially with the U.S. Census, Naturalisation  and various codes in the 1700s,  during the time of SCIENTIFIC RACISM. Black people were classified and categorized by inferior so-called white men during the "Time of Enlightenment" into psuedo-scientific social constructs called RACE. <p></p>THERE IS NO SUCH THING AS RACE!</p><p>As we begin to research the docuemented WRITTEN records of Ancient, Medieval, Early Modern and other historic eras,  Black people can use the written records to clarify the truth. <p>Black people named these TWO LANDS, America, over 22,000 years ago. Black people have ALWAYS been in the Americas.</p></section>
+
+    <!-- Mission: Education with Enterprise -->
+    <section id="mission" class="section">
+      <h3>Mission: Education with Enterprise</h3>
+      <p>We believe learning should change lives. Our mission is to unite <strong>scholarship</strong> with <strong>enterprise</strong> so that families and neighborhoods benefit materially and culturally from what we study.</p>
+      <div class="grid two">
+        <div class="card">
+          <h4>Knowledge with Impact</h4>
+          <p>We invest in teaching, outreach, research, and <strong>community wealth‑building</strong>. Education is formation: shaping households, strengthening families, and empowering people to walk in truth and self‑determination.</p>
+        </div>
+        <div class="card">
+          <h4>Learning as Worship</h4>
+          <p>We treat study as a sacred act — honoring the Most High through diligent inquiry into records, lands, languages, covenants, and creation. To learn is to love. To question is to grow. To discover is to glorify God.</p>
+        </div>
+        <div class="card">
+          <h4>Enterprise with Purpose</h4>
+          <p>Knowledge must live in practice. We develop ventures that sustain families, circulate resources, and build durable institutions, so wisdom multiplies provision for generations.</p>
+        </div>
+        <div class="card">
+          <h4>Memory, Daily</h4>
+          <p>Montly is our reminder: remembrance is a rhythm. We honor Black memory across Scripture and world history, connecting the past to present action.<\/p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we do -->
+    <section id="what-we-do" class="section">
+      <h3>What We Do</h3>
+      <div class="grid two">
+        <div class="card">
+          <h4>Open Study Resources</h4>
+          <p>We publish accessible study guides, lesson plans, and timelines to help families and communities learn together.</p>
+          <ul>
+            <a href="./figures.html">Biographies &amp; primary‑source excerpts</a>
+            <a href="./timeline.html">Historical timelines &amp; maps</a>
+            <a href="./faq.html">How‑to study tools &amp; FAQs</a>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Courses &amp; Workshops</h4>
+          <p>We host study circles, public lectures, and practical trainings — from digital literacy to community enterprise.</p>
+        </div>
+        <div class="card">
+          <h4>Library &amp; Archives</h4>
+          <p>We’re building a digital library of public‑domain texts, responsibly excerpted works, and original study materials.</p>
+        </div>
+        <div class="card">
+          <h4>Community Enterprise</h4>
+          <p>We incubate mission‑aligned ventures and publish transparent models for ethical, community‑first revenue.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values / Principles -->
+    <section id="values" class="section">
+      <h3>Our Core Principles</h3>
+      <div class="grid two">
+        <div class="card"><h4>Truth‑First</h4><p>We privilege primary sources, careful definitions, and clear citations. We publish corrections when needed.</p></div>
+        <div class="card"><h4>Family‑Centered</h4><p>We design resources that households can use together and that strengthen local self‑reliance.</p></div>
+        <div class="card"><h4>Craft &amp; Clarity</h4><p>We aim for plain language alongside technical terms so beginners and experts can learn side‑by‑side.</p></div>
+        <div class="card"><h4>Honor &amp; Stewardship</h4><p>We steward stories and resources with care — respecting authorship, licensing, and community trust.</p></div>
+      </div>
+    </section>
+
+    <!-- Transparency & Governance -->
+    <section id="governance" class="section">
+      <h3>Transparency &amp; Governance</h3>
+      <div class="grid two">
+        <div class="card">
+          <h4>How We’re Structured</h4>
+          <ul>
+           LOREM IPSUM Our goal is to maximize program impact while maintaining responsible operations and reserves.
+          </ul>
+        </div>
+        <div class="card">
+          <h4>How Funds Are Used</h4>
+          <p>Our goal is to maximize program impact while maintaining responsible operations and reserves.</p>
+          <ul>
+            Programs: study resources, courses, library, community projects.
+            Operations: web, tooling, compliance, and modest administration.
+            Reserves: conservative savings for stability and growth.
+          </ul>
+          <p class="muted">We publish periodic summaries of income and use of funds. Request the latest report via the Contact page.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p><strong>Receipts:</strong> We provide written acknowledgments for contributions. <strong>Disclosures:</strong> Content on this site is for education and ministry; it is not legal or tax advice.</p>
+      </div>
+    </section>
+
+    <!-- Get involved -->
+    <section id="get-involved" class="section">
+      <h3>Get Involved</h3>
+      <div class="grid two">
+        <div class="card">
+          <h4>Study with Us</h4>
+          <p>Form a local study circle or join upcoming sessions. Start with our <a href="./faq.html">FAQ</a>.</p>
+        </div>
+        <div class="card">
+          <h4>Contribute Research</h4>
+          <p>Share sources, corrections, or new timelines. We welcome peer review and collaboration.</p>
+        </div>
+        <div class="card">
+          <h4>Support the Work</h4>
+          <p>Partner financially or in‑kind to expand our library and programs. Request details on the <a href="./contact.html">Contact</a> page.</p>
+        </div>
+        <div class="card">
+          <h4>Volunteer</h4>
+          <p>Editors, developers, designers, educators — your craft can help families learn. Reach out to get started.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ preview / CTA -->
+    <section class="section cta">
+      <h3>Have questions?</h3>
+      <p>Visit the <a href="./faq.html">FAQ</a> or send a message through <a href="./contact.html">Contact</a>. We’ll point you to sources and next steps.</p>
+    </section>
+  </main>
+
+
+
+    <footer>
     <p>
       &copy; 2025 Black History Monthly. All rights reserved.
       Website designed by
@@ -66,6 +234,25 @@
     </p>
   </footer>
 
-  <script src="/script.js"></script>
+  <!-- Minimal JS: responsive menu + year -->
+  <script>
+    function toggleMenu(){
+      var nav = document.getElementById('nav-links');
+      var btn = document.querySelector('.menu-toggle');
+      if (!nav) return;
+      nav.classList.toggle('open');
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', (!expanded).toString());
+    }
+    // Set current year
+    (function(){
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
+
+
+
+
