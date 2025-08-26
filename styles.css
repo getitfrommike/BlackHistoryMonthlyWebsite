@@ -536,3 +536,18 @@ body.dark .about-section h2 {
 .monthly-feature__info {
   text-align: left; /* optional: keep text aligned left inside its column */
 }
+
+
+/* Paragraph spacing only in main content, but NOT in cards */
+.section p,
+.post p,
+.about-section p,
+.monthly-feature__info p {
+  margin-bottom: 1.2em;
+}
+
+/* Exclude card text */
+.card p {
+  margin-bottom: 0; /* keep card text tight */
+}
+
